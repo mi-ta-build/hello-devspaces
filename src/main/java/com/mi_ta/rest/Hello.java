@@ -1,4 +1,4 @@
-ackage com.mi_ta.rest;
+package com.mi_ta.rest;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
