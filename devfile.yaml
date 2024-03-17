@@ -1,1 +1,25 @@
-
+schemaVersion: 2.2.0
+metadata:
+  name: semeru sample
+  version: 0.1.0
+components:
+  - name: dev
+    container:
+      image: ghcr.io/mi-ta-build/semeru-17-devspaces
+      cpuLimit: 2000m
+      cpuRequest: 500m
+      memoryLimit: 1Gi
+      mountSources: true
+      sourceMapping: /projects
+      volumeMounts:
+        - name: cache
+          path: /cache
+      endpoints:
+        - exposure: public
+          path: /
+          name: ep1
+          targetPort: 9080
+          protocol: http
+  - name: cache
+    volume:
+      size: 1G
