@@ -6,9 +6,10 @@ components:
   - name: dev
     container:
       image: ghcr.io/mi-ta-build/semeru-17-devspaces
+      memoryRequest: 256Mi
+      memoryLimit: 2Gi
+      cpuRequest: 100m
       cpuLimit: 2000m
-      cpuRequest: 500m
-      memoryLimit: 1Gi
       mountSources: true
       sourceMapping: /projects
       volumeMounts:
